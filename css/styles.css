@@ -18,9 +18,9 @@ body {
   width: 130px;
   height: 198px;
   background-color: #87ceeb;
-  left: 125px;
+  left: 15px;
   top: 150px;
-  border-radius: 2px;
+  border-radius: 5px;
   border: 1px solid black;
   z-index: -1;
 }
@@ -36,11 +36,20 @@ body {
   position: absolute;
   content: "";
   border: 2px solid black;
-  border-radius: 2px;
+  border-radius: 5px;
   width: 120px;
   height: 189px;
   left: 3.25px;
   top: 3.25px;
+}
+.calendar p {
+  position: absolute;
+  left: 29px;
+  top: -7px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
 }
 .tree1,
 .tree2,
@@ -1105,10 +1114,10 @@ input[type="checkbox"]::after {
   transform: rotate(43deg);
 }
 input:checked[type="checkbox"]::before {
-  background-image: repeating-conic-gradient(white, black 0.00085%);
-  animation: back 1s linear infinite;
+  background-image: repeating-conic-gradient(white, black 0.0007%);
+  animation: fuzz 50s linear infinite;
 }
-@keyframes back {
+@keyframes fuzz {
   from {
     background-size: 100% 100%;
   }
