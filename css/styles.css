@@ -1115,7 +1115,7 @@ input[type="checkbox"]::after {
 }
 input:checked[type="checkbox"]::before {
   background-image: repeating-conic-gradient(white, black 0.0007%);
-  animation: fuzz 50s linear infinite;
+  animation: fuzz 1s linear infinite;
 }
 @keyframes fuzz {
   from {
@@ -1180,19 +1180,8 @@ input:checked[type="checkbox"]::before {
   left: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  box-shadow: 0.1em 0.1em 2em 0.2em rgba(0, 0, 0, 0.5);
 }
-.base1::before {
-  position: absolute;
-  content: "";
-  background-color: #000;
-  height: 20px;
-  width: 15px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  bottom: -12px;
-  left: 10px;
-}
+.base1::before,
 .base2::before {
   position: absolute;
   content: "";
@@ -1202,6 +1191,11 @@ input:checked[type="checkbox"]::before {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   bottom: -12px;
+}
+.base1::before {
+  left: 10px;
+}
+.base2::before {
   left: 157px;
 }
 .dresser {
