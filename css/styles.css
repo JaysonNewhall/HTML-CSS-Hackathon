@@ -6,7 +6,6 @@ body {
 .container {
   height: 850px;
   width: 1000px;
-  border: 3px solid white;
   position: absolute;
   margin: auto;
   top: 0;
@@ -17,7 +16,7 @@ body {
 .calendar {
   position: absolute;
   width: 130px;
-  height: 190px;
+  height: 198px;
   background-color: #87ceeb;
   left: 125px;
   top: 150px;
@@ -39,111 +38,97 @@ body {
   border: 2px solid black;
   border-radius: 2px;
   width: 120px;
-  height: 180px;
+  height: 189px;
   left: 3.25px;
   top: 3.25px;
 }
-.tree1 {
+.tree1,
+.tree2,
+.tree3,
+.tree4,
+.tree5,
+.tree6,
+.tree7,
+.tree8 {
   position: absolute;
+  background-color: #045a3a;
+  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+}
+.trunk1,
+.trunk2,
+.trunk3 {
+  position: absolute;
+  background-color: rgb(128, 60, 4);
+  z-index: 1;
+}
+.tree1 {
   left: 15px;
   top: 49px;
   width: 25%;
   height: 12%;
-  background-color: #045a3a;
-  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
   z-index: 2;
 }
 .trunk1 {
-  position: absolute;
   width: 5%;
   height: 15px;
   top: 70px;
   left: 28px;
-  background-color: rgb(128, 60, 4);
-  z-index: 1;
 }
 .tree2 {
-  position: absolute;
   left: 18px;
   top: 39px;
   width: 20%;
   height: 10%;
-  background-color: #045a3a;
-  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
 }
 .tree3 {
-  position: absolute;
   left: 20px;
   top: 30px;
   width: 16%;
   height: 8%;
-  background-color: #045a3a;
-  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
 }
 .tree4 {
-  position: absolute;
   left: 45px;
   top: 62px;
   width: 14%;
   height: 10%;
-  background-color: #045a3a;
-  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
   z-index: 2;
 }
 .trunk2 {
-  position: absolute;
   width: 4%;
   height: 15px;
   top: 78px;
   left: 39.49%;
-  background-color: rgb(128, 60, 4);
-  z-index: 1;
 }
 .tree5 {
-  position: absolute;
   left: 46px;
   top: 54px;
   width: 12%;
   height: 8%;
-  background-color: #045a3a;
-  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
 }
 .tree6 {
-  position: absolute;
   left: 67px;
   top: 25px;
   width: 18%;
   height: 10%;
-  background-color: #045a3a;
-  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
 }
 .tree7 {
-  position: absolute;
   left: 48.5%;
   top: 35px;
   width: 25%;
   height: 12%;
-  background-color: #045a3a;
-  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
 }
 .tree8 {
-  position: absolute;
   left: 60px;
   top: 45px;
   width: 30%;
   height: 15%;
-  background-color: #045a3a;
-  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
   z-index: 2;
 }
 .trunk3 {
-  position: absolute;
   width: 7%;
   height: 15px;
   top: 71px;
   left: 57.5%;
-  background-color: rgb(128, 60, 4);
-  z-index: 1;
 }
 .bulb1,
 .bulb2,
@@ -322,7 +307,29 @@ body {
   width: 10px;
   transform: rotate(16deg);
 }
-
+.calendar-grid {
+  position: absolute;
+  top: 52.25%;
+  left: 10.5px;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-row-gap: 1rem;
+  font-size: 0.475rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.day {
+  height: 9px;
+  margin: -10px 0px 0px 2px;
+}
+.fade {
+  color: gray;
+}
+.today {
+  color: #ffffff;
+  background-color: #f81e16;
+  border-radius: 50%;
+}
 .lights {
   position: absolute;
   left: 10px;
@@ -349,7 +356,6 @@ body {
   left: 16%;
   z-index: 4;
 }
-
 .lightbulb::after {
   content: "";
   top: -28px;
@@ -579,7 +585,6 @@ body {
   border-top-right-radius: 50%;
   z-index: 2;
 }
-
 .sitting-snow1 {
   width: 30px;
   height: 18px;
@@ -640,16 +645,19 @@ body {
   top: 309px;
   left: 235px;
 }
-.mountain1 {
+.mountain1,
+.mountain2 {
   height: 0px;
   width: 0px;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+}
+.mountain1 {
   border-bottom: 80px solid #22366d;
   border-right: 40px solid transparent;
   border-left: 40px solid transparent;
-  position: absolute;
-  bottom: 0px;
   left: 0px;
-  z-index: 0;
 }
 .mountain1::before,
 .mountain1::after {
@@ -670,15 +678,10 @@ body {
   left: 25px;
 }
 .mountain2 {
-  position: absolute;
-  height: 0;
-  width: 0;
   border-bottom: 170px solid #22366d;
   border-right: 60px solid transparent;
   border-left: 60px solid transparent;
   right: -3px;
-  bottom: 0;
-  z-index: 0;
 }
 .snowcap1,
 .snowcap2,
@@ -943,27 +946,33 @@ body {
   border-bottom: 16px solid #474747;
   border-bottom-right-radius: 8px;
 }
-.plant1 {
+.plant1,
+.plant2 {
   background-color: #0a4b01;
-  height: 30px;
-  width: 30px;
   position: absolute;
-  left: 2px;
-  bottom: 15px;
-  z-index: -1;
   border: 2px solid black;
   border-radius: 50%;
 }
-.plant1::before {
+.plant1::before,
+.plant2::before {
   background-color: #0a4b01;
-  width: 10px;
-  height: 10px;
   position: absolute;
   content: "";
-  right: 20px;
-  bottom: 23px;
   border: 2px solid black;
   border-radius: 50%;
+}
+.plant1 {
+  height: 30px;
+  width: 30px;
+  left: 2px;
+  bottom: 15px;
+  z-index: -1;
+}
+.plant1::before {
+  width: 10px;
+  height: 10px;
+  right: 20px;
+  bottom: 23px;
 }
 .pokey1,
 .pokey1::before,
@@ -1034,27 +1043,17 @@ body {
   bottom: 8px;
 }
 .plant2 {
-  background-color: #0a4b01;
   width: 18px;
   height: 18px;
-  position: absolute;
-  content: "";
   left: 20px;
   bottom: 38px;
-  border: 2px solid black;
-  border-radius: 50%;
   z-index: -2;
 }
 .plant2::before {
-  background-color: #0a4b01;
   width: 4px;
   height: 4px;
-  position: absolute;
-  content: "";
   right: 13px;
   bottom: 14px;
-  border: 2px solid black;
-  border-radius: 50%;
 }
 .tv {
   background-color: #783a13;
@@ -1106,9 +1105,8 @@ input[type="checkbox"]::after {
   transform: rotate(43deg);
 }
 input:checked[type="checkbox"]::before {
-  background-size: 100% 100%;
   background-image: repeating-conic-gradient(white, black 0.00085%);
-  animation: back 25s linear infinite;
+  animation: back 1s linear infinite;
 }
 @keyframes back {
   from {
